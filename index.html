@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find out the right time to start your next big thing.">
+    <meta name="keywords" content="right time to start, start a project, motivation, quotes">
+    <meta name="author" content="Neerajkumar">
+    <title>righttimetostart</title>
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            place-items: center;
+            min-height: 100dvh;
+            background-color: white;
+            color: black;
+        }
+
+        main {
+            margin-top: -5rem;
+        }
+
+        p {
+            font-size: 7rem;
+            font-weight: bolder;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .quote {
+            display: none;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #202020;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            width: 20rem;
+            text-align: center;
+        }
+
+        p:hover .quote {
+            display: block;
+            -webkit-animation: fadeIn 1.5s;
+            animation: fadeIn 1.5s;
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: black;
+                color: white;
+            }
+            .quote{
+                color: #909090;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p id="mainText">NOW
+            <span class="quote">The best time to plant a tree was 20 years ago. The second best time is now. – Chinese
+                Proverb</span>
+        </p>
+    </main>
+
+    <script>
+        const quotes = [
+            "The best time to plant a tree was 20 years ago. The second best time is now. – Chinese Proverb",
+            "The journey of a thousand miles begins with one step. – Lao Tzu",
+            "Don’t wait. The time will never be just right. – Napoleon Hill",
+            "The secret of getting ahead is getting started. – Mark Twain",
+            "You don’t have to be great to start, but you have to start to be great. – Zig Ziglar",
+            "The best way to predict the future is to create it. – Peter Drucker",
+            "Start where you are. Use what you have. Do what you can. – Arthur Ashe",
+            "A year from now you may wish you had started today. – Karen Lamb"
+        ];
+
+        document.getElementById('mainText').addEventListener("mouseenter", () => {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.querySelector('.quote').textContent = randomQuote;
+        });
+    </script>
+</body>
+
+</html>
